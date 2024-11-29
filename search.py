@@ -44,14 +44,19 @@ search_value = int(input("Введите искомое число "))
 low = 0
 high = len(a) - 1
 mid = len(a) // 2
+c = 0        #cчетчик
 while a[mid] != search_value and low <= high:
     if search_value > a[mid]:
         low = mid + 1
+        c+=1
     else:
         high = mid - 1
+        c+=1
     mid = (low + high) // 2
+    
 
 if low > high:
     print('Нет такого элемента')
 else:
     print('Индекс искомого элемента равен ', mid)
+    print("Кол-во операций =", c)
